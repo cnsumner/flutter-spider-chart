@@ -1,0 +1,15 @@
+image: cirrusci/flutter
+
+variables:
+before_script:
+  - flutter channel stable
+  - flutter upgrade
+  
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - cd ./example
+    - flutter build apk
