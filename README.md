@@ -1,6 +1,10 @@
+[![pub package](https://img.shields.io/pub/v/spider_chart.svg)](https://pub.dartlang.org/packages/spider_chart)
+
 # spider_chart
 
-A simple spider/radar chart library to Flutter.
+A simple spider/radar chart library for Flutter.
+
+![screenshot](screenshots/example_chart.png)
 
 ## Quick Start
 
