@@ -1,0 +1,18 @@
+name: spider_chart
+description: A simple Flutter spider/radar charting library
+version: 0.1.0
+author: cnsumner <1318452-cnsumner@users.noreply.gitlab.com>
+homepage: https://gitlab.com/cnsumner/flutter-spider-chart
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
