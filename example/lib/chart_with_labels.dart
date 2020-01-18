@@ -10,8 +10,8 @@ class ChartWithLabels extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          width: 300,
-          height: 300,
+          width: 200,
+          height: 200,
           child: SpiderChart(
               data: [
                 7,

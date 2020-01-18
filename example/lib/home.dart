@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:spider_chart_examples/basic_chart.dart';
 
 import 'chart_with_labels.dart';
 
-class MyHomePage extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +14,18 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            MaterialButton(
+            RaisedButton(
+              elevation: 10,
+              color: Colors.white,
+              child: Text("Basic Chart"),
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return BasicChart();
+                }));
+              },
+            ),
+            RaisedButton(
               elevation: 10,
               color: Colors.white,
               child: Text("Chart with labels"),
