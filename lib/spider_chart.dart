@@ -90,7 +90,7 @@ class SpiderChartPainter extends CustomPainter {
       outerPoints.add(Offset(x, y) + center);
     }
 
-    if (this.labels.length != null) {
+    if (this.labels != null) {
       paintLabels(canvas, center, outerPoints, this.labels);
     }
     paintGraphOutline(canvas, center, outerPoints);
