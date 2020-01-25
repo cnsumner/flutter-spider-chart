@@ -4,12 +4,19 @@ variables:
 before_script:
   - flutter channel stable
   - flutter upgrade
-  
+
 stages:
+  - test
   - build
+
+test:
+  stage: test
+  script:
+    - cd ./example
+    - flutter test
 
 build:
   stage: build
   script:
     - cd ./example
-    - flutter build apk
+    - flutter build apk --release
