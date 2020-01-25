@@ -15,6 +15,7 @@ class Home extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
+              key: Key("button_basic_chart"),
               elevation: 10,
               color: Colors.white,
               child: Text("Basic Chart"),
@@ -26,6 +27,7 @@ class Home extends StatelessWidget {
               },
             ),
             RaisedButton(
+              key: Key("button_chart_with_labels"),
               elevation: 10,
               color: Colors.white,
               child: Text("Chart with labels"),
