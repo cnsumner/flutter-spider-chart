@@ -134,12 +134,7 @@ class SpiderChartPainter extends CustomPainter {
       canvas.drawLine(center, points[i], spokes);
     }
 
-    //TODO: this could cause a rendering issue later if the rendering order is ever changed
-    //        using the spread operator in 'drawPoints' would fix this, but would require a
-    //        dart version bump.
-    points.add(points[0]);
-
-    canvas.drawPoints(PointMode.polygon, points, spokes);
+    canvas.drawPoints(PointMode.polygon, [...points, points[0]], spokes);
     canvas.drawCircle(center, 2, spokes);
   }
 
