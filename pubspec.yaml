@@ -1,11 +1,11 @@
 name: spider_chart
 description: Spider Chart is a simple spider/radar charting library for Flutter
 version: 0.1.5
-author: cnsumner <1318452-cnsumner@users.noreply.gitlab.com>
 homepage: https://github.com/cnsumner/flutter-spider-chart
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.18.2 <3.0.0'
+  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
@@ -14,5 +14,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^2.0.0
 
 flutter:

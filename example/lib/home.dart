@@ -14,26 +14,22 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               key: Key("button_basic_chart"),
-              elevation: 10,
-              color: Colors.white,
+              style: ElevatedButton.styleFrom(elevation: 10),
               child: Text("Basic Chart"),
               onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                   return BasicChart();
                 }));
               },
             ),
-            RaisedButton(
+            ElevatedButton(
               key: Key("button_chart_with_labels"),
-              elevation: 10,
-              color: Colors.white,
+              style: ElevatedButton.styleFrom(elevation: 10),
               child: Text("Chart with labels"),
               onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                   return ChartWithLabels();
                 }));
               },
