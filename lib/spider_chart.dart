@@ -10,12 +10,13 @@ class SpiderChart extends StatelessWidget {
   final double maxValue;
   final List<Color> colors;
   final List<String> labels;
-  final decimalPrecision;
+  final int decimalPrecision;
   final Size size;
   final double fallbackHeight;
   final double fallbackWidth;
 
   SpiderChart({
+    super.key,
     required this.data,
     required this.colors,
     required this.maxValue,
@@ -46,16 +47,16 @@ class SpiderChartPainter extends CustomPainter {
   final double maxNumber;
   final List<Color> colors;
   final List<String> labels;
-  final decimalPrecision;
+  final int decimalPrecision;
 
   final Paint spokes = Paint()..color = Colors.grey;
 
   final Paint fill = Paint()
-    ..color = Color.fromARGB(15, 50, 50, 50)
+    ..color = const Color.fromARGB(15, 50, 50, 50)
     ..style = PaintingStyle.fill;
 
   final Paint stroke = Paint()
-    ..color = Color.fromARGB(255, 50, 50, 50)
+    ..color = const Color.fromARGB(255, 50, 50, 50)
     ..style = PaintingStyle.stroke;
 
   SpiderChartPainter(this.data, this.maxNumber, this.colors, this.labels, this.decimalPrecision);
@@ -85,8 +86,8 @@ class SpiderChartPainter extends CustomPainter {
       outerPoints.add(Offset(x, y) + center);
     }
 
-    if (this.labels.isNotEmpty) {
-      paintLabels(canvas, center, outerPoints, this.labels);
+    if (labels.isNotEmpty) {
+      paintLabels(canvas, center, outerPoints, labels);
     }
     paintGraphOutline(canvas, center, outerPoints);
     paintDataLines(canvas, dataPoints);
@@ -115,7 +116,7 @@ class SpiderChartPainter extends CustomPainter {
     var textPainter = TextPainter(textDirection: TextDirection.ltr);
     for (var i = 0; i < points.length; i++) {
       String s = data[i].toStringAsFixed(decimalPrecision);
-      textPainter.text = TextSpan(text: s, style: TextStyle(color: Colors.black));
+      textPainter.text = TextSpan(text: s, style: const TextStyle(color: Colors.black));
       textPainter.layout();
       if (points[i].dx < center.dx) {
         textPainter.paint(canvas, points[i].translate(-(textPainter.size.width + 5.0), 0));

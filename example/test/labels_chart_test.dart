@@ -4,6 +4,6 @@ import 'package:spider_chart_examples/chart_with_labels.dart';
 
 void main() {
   testWidgets('Smoke test basic chart', (WidgetTester tester) async {
-    await tester.pumpWidget(MaterialApp(home: ChartWithLabels()));
+    await tester.pumpWidget(const MaterialApp(home: ChartWithLabels()));
   });
 }
