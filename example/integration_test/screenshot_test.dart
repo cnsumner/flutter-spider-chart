@@ -8,10 +8,10 @@ void main() {
 
   group('Take screenshots', () {
     testWidgets('screenshot basic chart', (tester) async {
-      await tester.pumpWidget(App());
+      await tester.pumpWidget(const App());
       await tester.pumpAndSettle();
 
-      final finder = find.byKey(Key("button_basic_chart"));
+      final finder = find.byKey(const Key("button_basic_chart"));
 
       await tester.tap(finder);
 
@@ -25,10 +25,10 @@ void main() {
     });
 
     testWidgets('screenshot chart with labels', (tester) async {
-      await tester.pumpWidget(App());
+      await tester.pumpWidget(const App());
       await tester.pumpAndSettle();
 
-      final finder = find.byKey(Key("button_chart_with_labels"), skipOffstage: false);
+      final finder = find.byKey(const Key("button_chart_with_labels"), skipOffstage: false);
 
       await tester.tap(finder);
 

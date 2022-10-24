@@ -4,6 +4,6 @@ import 'package:spider_chart_examples/home.dart';
 
 void main() {
   testWidgets('Smoke test home screen', (WidgetTester tester) async {
-    await tester.pumpWidget(MaterialApp(home: Home()));
+    await tester.pumpWidget(const MaterialApp(home: Home()));
   });
 }
