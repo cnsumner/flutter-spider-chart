@@ -4,6 +4,8 @@ import 'package:spider_chart_examples/basic_chart.dart';
 import 'chart_with_labels.dart';
 
 class Home extends StatelessWidget {
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +25,9 @@ class Home extends StatelessWidget {
                   return BasicChart();
                 }));
               },
+            ),
+            const SizedBox(
+              height: 10,
             ),
             ElevatedButton(
               key: Key("button_chart_with_labels"),
