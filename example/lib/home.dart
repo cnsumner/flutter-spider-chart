@@ -21,7 +21,8 @@ class Home extends StatelessWidget {
               style: ElevatedButton.styleFrom(elevation: 10),
               child: const Text("Basic Chart"),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
                   return const BasicChart();
                 }));
               },
@@ -34,7 +35,8 @@ class Home extends StatelessWidget {
               style: ElevatedButton.styleFrom(elevation: 10),
               child: const Text("Chart with labels"),
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
                   return const ChartWithLabels();
                 }));
               },

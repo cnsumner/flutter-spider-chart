@@ -28,7 +28,8 @@ void main() {
       await tester.pumpWidget(const App());
       await tester.pumpAndSettle();
 
-      final finder = find.byKey(const Key("button_chart_with_labels"), skipOffstage: false);
+      final finder = find.byKey(const Key("button_chart_with_labels"),
+          skipOffstage: false);
 
       await tester.tap(finder);
 
