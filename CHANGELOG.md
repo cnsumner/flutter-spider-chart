@@ -1,3 +1,9 @@
+## 0.2.0
+
+- Color parameter is now optional and alternative color swatch parameter introduced
+    - Color swatch is useful for app theme matching. Blue color swatch is provided by default if neither custom colors nor color swatch are specified
+- Max value now optional and is automatically calculated from data points if not provided
+
 ## 0.1.8
 
 - Add api documentation
