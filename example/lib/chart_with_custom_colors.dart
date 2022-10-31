@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:spider_chart/spider_chart.dart';
 
-class ChartWithLabels extends StatelessWidget {
-  const ChartWithLabels({super.key});
+class ChartWithCustomColors extends StatelessWidget {
+  const ChartWithCustomColors({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chart With Labels'),
+        title: const Text('Chart With Custom Colors'),
       ),
       body: Center(
         child: SizedBox(
@@ -22,12 +22,12 @@ class ChartWithLabels extends StatelessWidget {
               7,
               4,
             ],
-            labels: const <String>[
-              "label 1",
-              "label 2",
-              "label 3",
-              "label 4",
-              "label 5",
+            colors: const <Color>[
+              Colors.red,
+              Colors.green,
+              Colors.blue,
+              Colors.yellow,
+              Colors.indigo,
             ],
           ),
         ),
