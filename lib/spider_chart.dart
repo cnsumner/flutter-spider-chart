@@ -4,7 +4,7 @@ library spider_chart;
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'dart:math' show pi, cos, sin;
+import 'dart:math' show pi, cos, sin, max;
 
 /// Displays a spider/radar chart
 class SpiderChart extends StatelessWidget {
@@ -13,12 +13,13 @@ class SpiderChart extends StatelessWidget {
 
   /// The colors of the data points
   final List<Color> colors;
+  final MaterialColor? colorSwatch;
 
   /// Optional labels for the data points
   final List<String> labels;
 
   /// The value represented by the chart perimeter
-  final double maxValue;
+  final double? maxValue;
   final int decimalPrecision;
 
   /// Custom painter [Size]
@@ -30,27 +31,53 @@ class SpiderChart extends StatelessWidget {
   SpiderChart({
     super.key,
     required this.data,
-    required this.colors,
-    required this.maxValue,
+    this.colors = const [],
+    this.maxValue,
     this.labels = const [],
     this.size = Size.infinite,
     this.decimalPrecision = 0,
     this.fallbackHeight = 200,
     this.fallbackWidth = 200,
-  })  : assert(data.length == colors.length,
-            'Length of data and color lists must be equal'),
-        assert(labels.isNotEmpty ? data.length == labels.length : true,
-            'Length of data and labels lists must be equal');
+    this.colorSwatch,
+  })  : assert(labels.isNotEmpty ? data.length == labels.length : true,
+            'Length of data and labels lists must be equal'),
+        assert(colors.isNotEmpty ? colors.length == data.length : true,
+            "Custom colors length and data length must be equal"),
+        assert(colorSwatch != null ? data.length < 10 : true,
+            "For large data sets (>10 data points), please define custom colors using the [colors] parameter");
 
   @override
   Widget build(BuildContext context) {
+    List<Color> dataPointColors;
+
+    if (colors.isNotEmpty) {
+      dataPointColors = colors;
+    } else {
+      var swatch = colorSwatch ?? Colors.blue;
+
+      dataPointColors = <Color>[
+        swatch.shade900,
+        swatch.shade800,
+        swatch.shade700,
+        swatch.shade600,
+        swatch.shade500,
+        swatch.shade400,
+        swatch.shade300,
+        swatch.shade200,
+        swatch.shade100,
+        swatch.shade50,
+      ].take(data.length).toList();
+    }
+
+    var calculatedMax = maxValue ?? data.reduce(max);
+
     return LimitedBox(
       maxWidth: fallbackWidth,
       maxHeight: fallbackHeight,
       child: CustomPaint(
         size: size,
         painter: SpiderChartPainter(
-            data, maxValue, colors, labels, decimalPrecision),
+            data, calculatedMax, dataPointColors, labels, decimalPrecision),
       ),
     );
   }
