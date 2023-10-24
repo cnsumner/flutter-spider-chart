@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spider_chart/spider_chart.dart';
 
 class ChartWithMax extends StatelessWidget {
-  const ChartWithMax({super.key});
+  const ChartWithMax({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

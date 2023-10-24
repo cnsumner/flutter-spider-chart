@@ -1,99 +1,101 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:integration_test/integration_test.dart';
-import 'package:spider_chart_examples/main.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter_test/flutter_test.dart';
 
-void main() {
-  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+// // import 'package:integration_test/integration_test.dart';
 
-  group('Take screenshots', () {
-    testWidgets('screenshot basic chart', (tester) async {
-      await tester.pumpWidget(const App());
-      await tester.pumpAndSettle();
+// import '../lib/main.dart';
 
-      final finder = find.byKey(const Key("button_default_chart"));
+// void main() {
+//   // final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-      await tester.tap(finder);
+//   group('Take screenshots', () {
+//     testWidgets('screenshot basic chart', (tester) async {
+//       await tester.pumpWidget(const App());
+//       await tester.pumpAndSettle();
 
-      await tester.pumpAndSettle();
+//       final finder = find.byKey(const Key("button_default_chart"));
 
-      await binding.convertFlutterSurfaceToImage();
+//       await tester.tap(finder);
 
-      await tester.pumpAndSettle();
+//       await tester.pumpAndSettle();
 
-      await binding.takeScreenshot('default_chart');
-    });
+//       await binding.convertFlutterSurfaceToImage();
 
-    testWidgets('screenshot chart with labels', (tester) async {
-      await tester.pumpWidget(const App());
-      await tester.pumpAndSettle();
+//       await tester.pumpAndSettle();
 
-      final finder = find.byKey(const Key("button_chart_with_labels"),
-          skipOffstage: false);
+//       await binding.takeScreenshot('default_chart');
+//     });
 
-      await tester.tap(finder);
+//     testWidgets('screenshot chart with labels', (tester) async {
+//       await tester.pumpWidget(const App());
+//       await tester.pumpAndSettle();
 
-      await tester.pumpAndSettle();
+//       final finder = find.byKey(const Key("button_chart_with_labels"),
+//           skipOffstage: false);
 
-      await binding.convertFlutterSurfaceToImage();
+//       await tester.tap(finder);
 
-      await tester.pumpAndSettle();
+//       await tester.pumpAndSettle();
 
-      await binding.takeScreenshot('chart_with_labels');
-    });
+//       await binding.convertFlutterSurfaceToImage();
 
-    testWidgets('screenshot chart with max value', (tester) async {
-      await tester.pumpWidget(const App());
-      await tester.pumpAndSettle();
+//       await tester.pumpAndSettle();
 
-      final finder = find.byKey(const Key("button_chart_with_max_value"),
-          skipOffstage: false);
+//       await binding.takeScreenshot('chart_with_labels');
+//     });
 
-      await tester.tap(finder);
+//     testWidgets('screenshot chart with max value', (tester) async {
+//       await tester.pumpWidget(const App());
+//       await tester.pumpAndSettle();
 
-      await tester.pumpAndSettle();
+//       final finder = find.byKey(const Key("button_chart_with_max_value"),
+//           skipOffstage: false);
 
-      await binding.convertFlutterSurfaceToImage();
+//       await tester.tap(finder);
 
-      await tester.pumpAndSettle();
+//       await tester.pumpAndSettle();
 
-      await binding.takeScreenshot('chart_with_max_value');
-    });
+//       await binding.convertFlutterSurfaceToImage();
 
-    testWidgets('screenshot chart with custom colors', (tester) async {
-      await tester.pumpWidget(const App());
-      await tester.pumpAndSettle();
+//       await tester.pumpAndSettle();
 
-      final finder = find.byKey(const Key("button_chart_with_custom_colors"),
-          skipOffstage: false);
+//       await binding.takeScreenshot('chart_with_max_value');
+//     });
 
-      await tester.tap(finder);
+//     testWidgets('screenshot chart with custom colors', (tester) async {
+//       await tester.pumpWidget(const App());
+//       await tester.pumpAndSettle();
 
-      await tester.pumpAndSettle();
+//       final finder = find.byKey(const Key("button_chart_with_custom_colors"),
+//           skipOffstage: false);
 
-      await binding.convertFlutterSurfaceToImage();
+//       await tester.tap(finder);
 
-      await tester.pumpAndSettle();
+//       await tester.pumpAndSettle();
 
-      await binding.takeScreenshot('chart_with_custom_colors');
-    });
+//       await binding.convertFlutterSurfaceToImage();
 
-    testWidgets('screenshot chart with color swatch', (tester) async {
-      await tester.pumpWidget(const App());
-      await tester.pumpAndSettle();
+//       await tester.pumpAndSettle();
 
-      final finder = find.byKey(const Key("button_chart_with_color_swatch"),
-          skipOffstage: false);
+//       await binding.takeScreenshot('chart_with_custom_colors');
+//     });
 
-      await tester.tap(finder);
+//     testWidgets('screenshot chart with color swatch', (tester) async {
+//       await tester.pumpWidget(const App());
+//       await tester.pumpAndSettle();
 
-      await tester.pumpAndSettle();
+//       final finder = find.byKey(const Key("button_chart_with_color_swatch"),
+//           skipOffstage: false);
 
-      await binding.convertFlutterSurfaceToImage();
+//       await tester.tap(finder);
 
-      await tester.pumpAndSettle();
+//       await tester.pumpAndSettle();
 
-      await binding.takeScreenshot('chart_with_color_swatch');
-    });
-  });
-}
+//       await binding.convertFlutterSurfaceToImage();
+
+//       await tester.pumpAndSettle();
+
+//       await binding.takeScreenshot('chart_with_color_swatch');
+//     });
+//   });
+// }

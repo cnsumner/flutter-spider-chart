@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spider_chart/spider_chart.dart';
 
 class ChartWithColorSwatch extends StatelessWidget {
-  const ChartWithColorSwatch({super.key});
+  const ChartWithColorSwatch({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

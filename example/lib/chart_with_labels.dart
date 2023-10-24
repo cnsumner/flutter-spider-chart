@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spider_chart/spider_chart.dart';
 
 class ChartWithLabels extends StatelessWidget {
-  const ChartWithLabels({super.key});
+  const ChartWithLabels({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

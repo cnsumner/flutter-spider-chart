@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:spider_chart_examples/chart_with_max_value.dart';
-import 'package:spider_chart_examples/default_chart.dart';
-import 'package:spider_chart_examples/chart_with_color_swatch.dart';
-import 'package:spider_chart_examples/chart_with_custom_colors.dart';
 
+import 'chart_with_color_swatch.dart';
+import 'chart_with_custom_colors.dart';
 import 'chart_with_labels.dart';
+import 'chart_with_max_value.dart';
+import 'default_chart.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

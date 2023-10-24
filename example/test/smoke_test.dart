@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:spider_chart_examples/chart_with_color_swatch.dart';
-import 'package:spider_chart_examples/chart_with_custom_colors.dart';
-import 'package:spider_chart_examples/chart_with_labels.dart';
-import 'package:spider_chart_examples/chart_with_max_value.dart';
-import 'package:spider_chart_examples/default_chart.dart';
-import 'package:spider_chart_examples/home.dart';
+
+import '../lib/chart_with_color_swatch.dart';
+import '../lib/chart_with_custom_colors.dart';
+import '../lib/chart_with_labels.dart';
+import '../lib/chart_with_max_value.dart';
+import '../lib/default_chart.dart';
+import '../lib/home.dart';
 
 void main() {
   testWidgets('Smoke test home screen', (WidgetTester tester) async {
