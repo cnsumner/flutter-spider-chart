@@ -12,6 +12,7 @@ dependencies:
   cupertino_icons:
   spider_chart_updated:
     path: ../
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
