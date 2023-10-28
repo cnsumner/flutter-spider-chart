@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:spider_chart/spider_chart.dart';
+import 'package:spider_chart_updated/spider_chart_updated.dart';
 
 class ChartWithMax extends StatelessWidget {
-  const ChartWithMax({super.key});
+  const ChartWithMax({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class ChartWithMax extends StatelessWidget {
         child: SizedBox(
           width: 200,
           height: 200,
-          child: SpiderChart(
+          child: SpiderChartUpdated(
             data: const [
               7,
               5,

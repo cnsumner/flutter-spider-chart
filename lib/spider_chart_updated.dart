@@ -1,13 +1,13 @@
 /// A charting library for displaying spider/radar charts
 library spider_chart;
 
+import 'dart:math' show pi, cos, sin, max;
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'dart:math' show pi, cos, sin, max;
 
 /// Displays a spider/radar chart
-class SpiderChart extends StatelessWidget {
+class SpiderChartUpdated extends StatelessWidget {
   /// The data points to be displayed
   final List<double> data;
 
@@ -26,10 +26,11 @@ class SpiderChart extends StatelessWidget {
   final Size size;
   final double fallbackHeight;
   final double fallbackWidth;
+  final Color? lineColor;
 
   /// Creates a widget that displays a spider chart
-  SpiderChart({
-    super.key,
+  SpiderChartUpdated({
+    Key? key,
     required this.data,
     this.colors = const [],
     this.maxValue,
@@ -39,12 +40,14 @@ class SpiderChart extends StatelessWidget {
     this.fallbackHeight = 200,
     this.fallbackWidth = 200,
     this.colorSwatch,
+    this.lineColor,
   })  : assert(labels.isNotEmpty ? data.length == labels.length : true,
             'Length of data and labels lists must be equal'),
         assert(colors.isNotEmpty ? colors.length == data.length : true,
             "Custom colors length and data length must be equal"),
         assert(colorSwatch != null ? data.length < 10 : true,
-            "For large data sets (>10 data points), please define custom colors using the [colors] parameter");
+            "For large data sets (>10 data points), please define custom colors using the [colors] parameter"),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,20 +79,21 @@ class SpiderChart extends StatelessWidget {
       maxHeight: fallbackHeight,
       child: CustomPaint(
         size: size,
-        painter: SpiderChartPainter(
-            data, calculatedMax, dataPointColors, labels, decimalPrecision),
+        painter: SpiderChartPainter(data, calculatedMax, dataPointColors,
+            labels, decimalPrecision, lineColor ?? Colors.grey),
       ),
     );
   }
 }
 
-/// Custom painter for the [SpiderChart] widget
+/// Custom painter for the [SpiderChartUpdated] widget
 class SpiderChartPainter extends CustomPainter {
   final List<double> data;
   final double maxNumber;
   final List<Color> colors;
   final List<String> labels;
   final int decimalPrecision;
+  final Color? lineColor;
 
   final Paint spokes = Paint()..color = Colors.grey;
 
@@ -102,7 +106,7 @@ class SpiderChartPainter extends CustomPainter {
     ..style = PaintingStyle.stroke;
 
   SpiderChartPainter(this.data, this.maxNumber, this.colors, this.labels,
-      this.decimalPrecision);
+      this.decimalPrecision, this.lineColor);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -128,6 +132,8 @@ class SpiderChartPainter extends CustomPainter {
 
       outerPoints.add(Offset(x, y) + center);
     }
+
+    spokes.color = lineColor ?? Colors.grey;
 
     if (labels.isNotEmpty) {
       paintLabels(canvas, center, outerPoints, labels);

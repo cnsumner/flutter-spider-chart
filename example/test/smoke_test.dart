@@ -26,7 +26,8 @@ void main() {
 
   testWidgets('Smoke test chart with custom colors',
       (WidgetTester tester) async {
-    await tester.pumpWidget(const MaterialApp(home: ChartWithCustomColors()));
+    await tester
+        .pumpWidget(const MaterialApp(home: SpiderChartWithIndicatorText()));
   });
 
   testWidgets('Smoke test chart with color swatch',
