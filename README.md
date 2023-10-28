@@ -1,5 +1,3 @@
-[![Pub](https://img.shields.io/pub/v/spider_chart.svg)](https://pub.dartlang.org/packages/spider_chart)
-[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/cnsumner/flutter-spider-chart.svg)](https://gitlab.com/cnsumner/flutter-spider-chart)
 
 # spider_chart
 
