@@ -7,7 +7,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 /// Displays a spider/radar chart
-class SpiderChart extends StatelessWidget {
+class SpiderChartUpdated extends StatelessWidget {
   /// The data points to be displayed
   final List<double> data;
 
@@ -29,7 +29,7 @@ class SpiderChart extends StatelessWidget {
   final Color? lineColor;
 
   /// Creates a widget that displays a spider chart
-  SpiderChart({
+  SpiderChartUpdated({
     Key? key,
     required this.data,
     this.colors = const [],
@@ -86,7 +86,7 @@ class SpiderChart extends StatelessWidget {
   }
 }
 
-/// Custom painter for the [SpiderChart] widget
+/// Custom painter for the [SpiderChartUpdated] widget
 class SpiderChartPainter extends CustomPainter {
   final List<double> data;
   final double maxNumber;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spider_chart/spider_chart.dart';
+import 'package:spider_chart_updated/spider_chart_updated.dart';
 
 class DefaultChart extends StatelessWidget {
   const DefaultChart({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class DefaultChart extends StatelessWidget {
         child: SizedBox(
           width: 200,
           height: 200,
-          child: SpiderChart(
+          child: SpiderChartUpdated(
             data: const [
               7,
               5,

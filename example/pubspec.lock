@@ -359,13 +359,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
-  spider_chart:
+  spider_chart_updated:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.2.0"
+    version: "0.3.0"
   stack_trace:
     dependency: transitive
     description:

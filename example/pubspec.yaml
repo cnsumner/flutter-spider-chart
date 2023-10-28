@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons:
-  spider_chart:
+  spider_chart_updated:
     path: ../
 
 dev_dependencies:
